@@ -17,7 +17,7 @@
     </h5>
   </div>
 
-
+  <script src="src/data/exampleVideoData.js"></script>
   <script src="src/models/video.js"></script>
   <script src="src/collections/videos.js"></script>
   <script src="src/lib/templateUrl.js"></script>
@@ -30,7 +30,8 @@
 
   <script>
     backboneReady(() => {
-      new AppView();
+      var ourVideos = new Videos(window.exampleVideoData);
+      new AppView({ collection: ourVideos}).render();
     });
   </script>
 
